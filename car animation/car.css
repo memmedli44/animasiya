@@ -1,0 +1,221 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+}
+
+.road {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+.road img {
+  width: 100%;
+  height: 100%;
+}
+
+.car {
+  width: 600px;
+  height: 400px;
+  position: absolute;
+  bottom: -50px;
+  left: 0px;
+  animation: MoveCar 10s linear infinite;
+  /* animation-direction: alternate; */
+}
+.car .car-img {
+  width: 100%;
+  height: 100%;
+  /* transform: rotate(-2deg); */
+}
+
+.car .front,
+.car .back {
+  position: absolute;
+  bottom: 145px;
+  width: 80px;
+  height: 82px;
+  animation: RotateWheel linear 0.1s infinite;
+}
+.car .back {
+  left: 110px;
+  /* bottom: 130px; */
+}
+
+.car .front {
+  right: 105px;
+}
+
+@keyframes RotateWheel {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes MoveCar {
+  0% {
+    transform: translateX(-600px) rotateY(0deg) translateY(80px);
+  }
+
+  50% {
+    transform: translateX(100vw) rotateY(0deg) translateY(80px);
+  }
+
+  51% {
+    transform: translateX(100vw) rotateY(180deg) translateY(-80px);
+  }
+
+  90% {
+    transform: translateX(-110%) rotateY(180deg) translateY(-80px);
+  }
+
+  91% {
+    transform: translateX(-110%) rotateY(0deg);
+  }
+
+  100% {
+    transform: translateX(-600px) rotateY(0deg);
+  }
+}
+
+.red,
+.yellow,
+.green {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  right: 200px;
+}
+.red {
+  background: red;
+  animation-duration: 10s;
+  animation-name: RedLight;
+  animation-iteration-count: infinite;
+  top: 0px;
+}
+.yellow {
+  background: rgb(137, 137, 0);
+  animation-duration: 10s;
+  animation-name: yellowLight;
+  animation-iteration-count: infinite;
+  top: 100px;
+}
+.green {
+  background: green;
+  animation-duration: 10s;
+  animation-name: GreenLight;
+  animation-iteration-count: infinite;
+  top: 200px;
+}
+
+@keyframes RedLight {
+  0% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 1;
+  }
+  22.5% {
+    opacity: 0.1;
+  }
+  25% {
+    opacity: 1;
+  }
+  27.5% {
+    opacity: 0.1;
+  }
+  30% {
+    opacity: 1;
+  }
+
+  32% {
+    opacity: 0.1;
+  }
+
+  40% {
+    opacity: 0.1;
+  }
+  60% {
+    opacity: 0.1;
+  }
+  80% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 0.1;
+  }
+}
+@keyframes yellowLight {
+  0% {
+    opacity: 0.1;
+  }
+  20% {
+    opacity: 0.1;
+  }
+  40% {
+    opacity: 1;
+  }
+  41.25% {
+    opacity: 0.1;
+  }
+  42.5% {
+    opacity: 1;
+  }
+  43.75% {
+    opacity: 0.1;
+  }
+
+  45% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.1;
+  }
+  60% {
+    opacity: 0.1;
+  }
+  80% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 0.1;
+  }
+}
+@keyframes GreenLight {
+  0% {
+    opacity: 0.1;
+  }
+  20% {
+    opacity: 0.1;
+  }
+  40% {
+    opacity: 0.1;
+  }
+  60% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 0.1;
+  }
+  90% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 0.1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
